@@ -6,7 +6,10 @@
   HINT: string and array methods that could be helpful (indexOf, filter)
 */
 
-function getLanes() {}
+function getLanes(streetsList) {
+  const filteredStreets = streetsList.filter(street => street.includes("Lane"));
+  return filteredStreets;
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

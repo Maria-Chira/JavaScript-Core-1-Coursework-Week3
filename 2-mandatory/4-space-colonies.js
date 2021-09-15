@@ -15,7 +15,14 @@
   
 */
 
-function getSettlers() {}
+function getSettlers(voyagers) {
+  let colonizers = voyagers.filter((voyager) => {
+    if (voyager[0]==="A" && voyager.includes("family")){
+      return voyager;
+    }
+  });
+  return colonizers;
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
