@@ -13,8 +13,34 @@ Create a function called sortAges which:
 You don't have to worry about making this algorithm work fast! The idea is to get you to
 "think" like a computer and practice your knowledge of basic JavaScript.
 */
+// function isNumber(item) {
+//   return  typeof item == "number";
+// }
 
-function sortAges(arr) {}
+// function sortAges(arr) {
+//   return arr.filter(isNumber).sort((a, b) => a - b);
+// }
+
+function sortAges(array){
+  let arrayOfNumbers = [];
+  for (var i = 0; i < array.length; i++) {
+    if (typeof array[i] == "number") {
+      arrayOfNumbers.push(array[i]);
+    }
+  }
+
+  for (var j=0; j<arrayOfNumbers.length; j++){
+    for (var k=0; k<arrayOfNumbers.length-1; k++){
+      if (arrayOfNumbers[k] > arrayOfNumbers[k + 1]) {
+        let temporaryVariable = arrayOfNumbers[k];
+        arrayOfNumbers[k] = arrayOfNumbers[k + 1];
+        arrayOfNumbers[k + 1] = temporaryVariable;
+      }
+    }
+  }
+  return arrayOfNumbers;
+}
+
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
